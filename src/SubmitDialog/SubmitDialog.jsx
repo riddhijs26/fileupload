@@ -37,7 +37,7 @@ const SubmitDialog = ({
     CustodianSubmited();
 
     axios
-      .post("http://localhost:8000/fileupload", {
+      .post(`${process.env.API_Url}/fileupload`, {
         data: {
           Name: textRef.current.value,
           NumberofFile: NumberofFile,
