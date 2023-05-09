@@ -44,7 +44,7 @@ const FileUpload = ({ files, setFiles }) => {
 
   const postData = async (data) => {
     try {
-      const res = await axios.post("http://localhost:8000/fileupload", data);
+      const res = await axios.post(`${process.env.API_Url}/fileupload`, data);
       if (res) {
         data.forEach((file) => (file.isUploading = false));
         setFiles([...files, ...data]);
